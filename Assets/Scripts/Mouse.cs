@@ -14,12 +14,15 @@ public class Mouse : MonoBehaviour {
 
     float xThrow;
     float jump;
+    bool immune = false;
     Animation anim;
+    ParticleSystem particles;
 
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animation>();
+        particles = GetComponent<ParticleSystem>();
 
     }
 
@@ -38,9 +41,23 @@ public class Mouse : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other);
-        SendMessageUpwards("Squish");
-        HandleSquish();
+        print(other.ToString());
+        if (other.ToString() == "Cheese (UnityEngine.BoxCollider)")
+        {
+            particles.Play();
+            immune = true;
+        }
+        else if(immune)
+        {
+            particles.Stop();
+            immune = false;
+        }
+        else
+        {
+            SendMessageUpwards("Squish");
+            HandleSquish();
+        }
+
     }
 
     private void ProccessRotation()

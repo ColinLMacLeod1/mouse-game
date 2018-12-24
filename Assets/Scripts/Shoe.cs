@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoe : MonoBehaviour {
 
     [SerializeField] Vector3 movementVector = new Vector3(0, 5, 0);
-    [SerializeField] float period = 5;
+    float period;
 
     //TODO remove from inspector later
     [Range(0, 1)] [SerializeField] float movementFactor; //0 for not moved 1 for fully moved
@@ -15,6 +15,7 @@ public class Shoe : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        period = Random.value * 3f + 0.75f;
         startingPos = transform.position;
     }
 

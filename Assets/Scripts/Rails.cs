@@ -6,17 +6,18 @@ public class Rails : MonoBehaviour {
 
     [SerializeField] float railSpeed = 10f;
     [SerializeField] float railRotationSpeed = 50f;
+    [SerializeField] float lapSpeed = 1f;
  
     [SerializeField] int section = 0;
     [SerializeField] int corner = 0;
 
-    int lap = 0;
+    float lap = 0f;
     bool rotating = false;
     bool stopped = false;
 
 	// Use this for initialization
 	void Start () {
-		
+        railRotationSpeed = 12 * railSpeed;
 	}
 	
 	// Update is called once per frame
@@ -50,7 +51,6 @@ public class Rails : MonoBehaviour {
                 if (currentYRotation > 89)
                 {
                     transform.rotation = Quaternion.Euler(0, 90, 0);
-                    corner = 1;
                     rotating = false;
                 }
                 break;
@@ -58,7 +58,6 @@ public class Rails : MonoBehaviour {
                 if (currentYRotation > 179 || currentYRotation < -178)
                 {
                     transform.rotation = Quaternion.Euler(0, 180, 0);
-                    corner = 2;
                     rotating = false;
                 }
                 break;
@@ -66,7 +65,6 @@ public class Rails : MonoBehaviour {
                 if (currentYRotation  > -89)
                 {
                     transform.rotation = Quaternion.Euler(0, -90, 0);
-                    corner = 3;
                     rotating = false;
                 }
                 break;
@@ -74,8 +72,8 @@ public class Rails : MonoBehaviour {
                 if (currentYRotation > -1)
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);
-                    corner = 0;
                     lap++;
+                    railSpeed += lapSpeed;
                     print(lap);
                     rotating = false;
                 }
@@ -119,6 +117,11 @@ public class Rails : MonoBehaviour {
         {
             rotating = true;
         }
+        if (transform.position.z > 0)
+        {
+            corner = 0;
+        }
+
         float newZ = transform.position.z + railSpeed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x, transform.position.y, newZ);
     }
@@ -135,6 +138,10 @@ public class Rails : MonoBehaviour {
         if (transform.position.x > 72 && !rotating && corner == 1)
         {
             rotating = true;
+        }
+        if (transform.position.x > 24)
+        {
+            corner = 1;
         }
         float newX = transform.position.x + railSpeed * Time.deltaTime;
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
@@ -153,6 +160,10 @@ public class Rails : MonoBehaviour {
         {
             rotating = true;
         }
+        if (transform.position.z < 16)
+        {
+            corner = 2;
+        }
         float newZ = transform.position.z - railSpeed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x, transform.position.y, newZ);
     }
@@ -169,6 +180,10 @@ public class Rails : MonoBehaviour {
         if (transform.position.x < 8 && !rotating && corner == 3)
         {
             rotating = true;
+        }
+        if (transform.position.x < 24)
+        {
+            corner = 3;
         }
         float newX = transform.position.x - railSpeed * Time.deltaTime;
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
