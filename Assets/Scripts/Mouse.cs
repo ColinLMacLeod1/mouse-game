@@ -39,6 +39,7 @@ public class Mouse : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         print(other);
+        SendMessageUpwards("Squish");
         HandleSquish();
     }
 

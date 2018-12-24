@@ -61,9 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Rails.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\Mouse.cs" />
+    <Compile Include="Assets\Scripts\Rails.cs" />
+    <Compile Include="Assets\Scripts\Shoe.cs" />
     <Compile Include="Assets\Scripts\Wall.cs" />
     <None Include="Assets\cityAnimalsRodents\readme.txt" />
     <None Include="Assets\Low Poly Buildings Lite\ReadMe.txt" />
