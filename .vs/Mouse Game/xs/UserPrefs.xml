@@ -8,7 +8,7 @@
       <File FileName="Assets/Scripts/Shoe.cs" Line="15" Column="35" />
       <File FileName="../3_Project_Boost/Assets/Oscillator.cs" Line="19" Column="3" />
       <File FileName="Assets/Scripts/Rails.cs" Line="20" Column="44" />
-      <File FileName="Assets/Scripts/Cheese.cs" Line="17" Column="20" />
+      <File FileName="Assets/Scripts/Cheese.cs" Line="15" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
