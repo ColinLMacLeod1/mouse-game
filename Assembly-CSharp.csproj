@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Cheese.cs" />
     <Compile Include="Assets\Scripts\Mouse.cs" />
     <Compile Include="Assets\Scripts\Rails.cs" />
+    <Compile Include="Assets\Scripts\Road.cs" />
     <Compile Include="Assets\Scripts\Shoe.cs" />
     <Compile Include="Assets\Scripts\Wall.cs" />
     <None Include="Assets\PolygonNature\Shaders\SyntyStudios_Trees.shader" />
