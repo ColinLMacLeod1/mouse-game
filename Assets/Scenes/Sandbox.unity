@@ -5471,7 +5471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130d8e942638e4f2d8ce49742cce6cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 7
   loadSceneDelay: 2
 --- !u!65 &534669907
 BoxCollider:
@@ -27710,7 +27710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4464539852130580, guid: 281c3ecff63334f9d92bc65213e7c199, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1327734702446940, guid: 281c3ecff63334f9d92bc65213e7c199, type: 2}
       propertyPath: m_Name
